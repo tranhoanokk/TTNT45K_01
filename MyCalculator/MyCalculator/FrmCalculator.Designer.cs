@@ -40,35 +40,39 @@
             // 
             // txtSo1
             // 
-            this.txtSo1.Location = new System.Drawing.Point(72, 43);
+            this.txtSo1.Location = new System.Drawing.Point(96, 53);
+            this.txtSo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSo1.Name = "txtSo1";
-            this.txtSo1.Size = new System.Drawing.Size(100, 20);
+            this.txtSo1.Size = new System.Drawing.Size(132, 22);
             this.txtSo1.TabIndex = 0;
             this.txtSo1.TextChanged += new System.EventHandler(this.txtSo1_TextChanged);
             // 
             // txtSo2
             // 
-            this.txtSo2.Location = new System.Drawing.Point(302, 43);
+            this.txtSo2.Location = new System.Drawing.Point(403, 53);
+            this.txtSo2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSo2.Name = "txtSo2";
-            this.txtSo2.Size = new System.Drawing.Size(100, 20);
+            this.txtSo2.Size = new System.Drawing.Size(132, 22);
             this.txtSo2.TabIndex = 1;
             this.txtSo2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtKQ
             // 
-            this.txtKQ.Location = new System.Drawing.Point(186, 95);
+            this.txtKQ.Location = new System.Drawing.Point(248, 117);
+            this.txtKQ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtKQ.Name = "txtKQ";
             this.txtKQ.ReadOnly = true;
-            this.txtKQ.Size = new System.Drawing.Size(100, 20);
+            this.txtKQ.Size = new System.Drawing.Size(132, 22);
             this.txtKQ.TabIndex = 2;
             // 
             // btnCong
             // 
             this.btnCong.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnCong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCong.Location = new System.Drawing.Point(43, 162);
+            this.btnCong.Location = new System.Drawing.Point(57, 199);
+            this.btnCong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCong.Name = "btnCong";
-            this.btnCong.Size = new System.Drawing.Size(75, 29);
+            this.btnCong.Size = new System.Drawing.Size(100, 36);
             this.btnCong.TabIndex = 3;
             this.btnCong.Text = "Cộng";
             this.btnCong.UseVisualStyleBackColor = false;
@@ -77,9 +81,10 @@
             // btnTru
             // 
             this.btnTru.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnTru.Location = new System.Drawing.Point(148, 162);
+            this.btnTru.Location = new System.Drawing.Point(197, 199);
+            this.btnTru.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTru.Name = "btnTru";
-            this.btnTru.Size = new System.Drawing.Size(75, 29);
+            this.btnTru.Size = new System.Drawing.Size(100, 36);
             this.btnTru.TabIndex = 4;
             this.btnTru.Text = "Trừ";
             this.btnTru.UseVisualStyleBackColor = false;
@@ -88,9 +93,10 @@
             // btnNhan
             // 
             this.btnNhan.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnNhan.Location = new System.Drawing.Point(251, 162);
+            this.btnNhan.Location = new System.Drawing.Point(335, 199);
+            this.btnNhan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNhan.Name = "btnNhan";
-            this.btnNhan.Size = new System.Drawing.Size(75, 29);
+            this.btnNhan.Size = new System.Drawing.Size(100, 36);
             this.btnNhan.TabIndex = 5;
             this.btnNhan.Text = "Nhân";
             this.btnNhan.UseVisualStyleBackColor = false;
@@ -99,9 +105,10 @@
             // btnChia
             // 
             this.btnChia.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnChia.Location = new System.Drawing.Point(358, 162);
+            this.btnChia.Location = new System.Drawing.Point(477, 199);
+            this.btnChia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChia.Name = "btnChia";
-            this.btnChia.Size = new System.Drawing.Size(75, 29);
+            this.btnChia.Size = new System.Drawing.Size(100, 36);
             this.btnChia.TabIndex = 6;
             this.btnChia.Text = "Chia";
             this.btnChia.UseVisualStyleBackColor = false;
@@ -109,10 +116,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(466, 279);
+            this.ClientSize = new System.Drawing.Size(621, 343);
             this.Controls.Add(this.btnChia);
             this.Controls.Add(this.btnNhan);
             this.Controls.Add(this.btnTru);
@@ -121,6 +128,7 @@
             this.Controls.Add(this.txtSo2);
             this.Controls.Add(this.txtSo1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "MyCalculator";
             this.ResumeLayout(false);
