@@ -98,5 +98,13 @@ namespace MyCalculator
             }
             return false;
         }
+
+            private void button1_Click(object sender, EventArgs e)
+            {
+                txtSo1.Text = " ";
+                txtSo2.Text = " ";
+                txtKQ.Text = " ";
+
+            }
     }
 }
