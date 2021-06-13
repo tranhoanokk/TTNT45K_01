@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Quản_lí_bán_hàng
 {
-    public partial class frmHang : Form
+    public partial class frmSuaHanghoa : Form
     {
-        public frmHang()
+        public frmSuaHanghoa()
         {
             InitializeComponent();
         }
 
-        private void txtMaH_TextChanged(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

@@ -19,16 +19,16 @@ namespace Quản_lí_bán_hàng
 
         private void ThemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHoaDon HoaDon= new frmHoaDon();
-            HoaDon.MdiParent=this;
-            HoaDon.Show();
+            frmThemhoadon ThemHD= new frmThemhoadon();
+            ThemHD.MdiParent = this;
+            ThemHD.Show();
         }
 
         private void ThemToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmHang Hang= new frmHang();
-            Hang.MdiParent=this;
-            Hang.Show();
+            frmThemhanghoa ThemHH= new frmThemhanghoa();
+            ThemHH.MdiParent = this;
+            ThemHH.Show();
         }
 
         private void TimKiemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,6 +36,34 @@ namespace Quản_lí_bán_hàng
             frmTimkiemHH Timkiem = new frmTimkiemHH();
             Timkiem.MdiParent = this;
             Timkiem.Show();
+        }
+
+        private void SuaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSuahoadon SuaHD = new frmSuahoadon();
+            SuaHD.MdiParent = this;
+            SuaHD.Show();
+        }
+
+        private void XoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmXoahoadon XoaHD = new frmXoahoadon();
+            XoaHD.MdiParent = this;
+            XoaHD.Show();
+        }
+
+        private void SuaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSuaHanghoa SuaHH = new frmSuaHanghoa();
+            SuaHH.MdiParent = this;
+            SuaHH.Show();
+        }
+
+        private void XoaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmXoahanghoa XoaHH = new frmXoahanghoa();
+            XoaHH.MdiParent = this;
+            XoaHH.Show();
         }
     }
 }

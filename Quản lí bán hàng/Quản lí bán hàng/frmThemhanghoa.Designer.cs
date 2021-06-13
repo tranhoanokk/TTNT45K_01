@@ -1,6 +1,6 @@
 ﻿namespace Quản_lí_bán_hàng
 {
-    partial class frmHang
+    partial class frmThemhanghoa
     {
         /// <summary>
         /// Required designer variable.
@@ -39,9 +39,8 @@
             this.txtGiaNhap = new System.Windows.Forms.TextBox();
             this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,31 +127,13 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(130, 193);
+            this.btnLuu.Location = new System.Drawing.Point(150, 194);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(260, 193);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 7;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnXoa.Location = new System.Drawing.Point(396, 193);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 8;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // dataGridView1
             // 
@@ -163,14 +144,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(605, 229);
             this.dataGridView1.TabIndex = 13;
             // 
-            // frmHang
+            // btnHuy
+            // 
+            this.btnHuy.Location = new System.Drawing.Point(382, 194);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 14;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            // 
+            // frmThemhanghoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 468);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.txtGiaBan);
             this.Controls.Add(this.txtGiaNhap);
@@ -182,8 +171,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmHang";
-            this.Text = "Hàng hóa";
+            this.Name = "frmThemhanghoa";
+            this.Text = "Thêm Hàng Hóa";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,8 +192,7 @@
         private System.Windows.Forms.TextBox txtGiaNhap;
         private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

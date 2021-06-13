@@ -10,29 +10,24 @@ using System.Windows.Forms;
 
 namespace Quản_lí_bán_hàng
 {
-    public partial class frmHoaDon : Form
+    public partial class frmXoahanghoa : Form
     {
-        public frmHoaDon()
+        public frmXoahanghoa()
         {
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

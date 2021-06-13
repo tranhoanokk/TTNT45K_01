@@ -50,17 +50,29 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHang.cs">
+    <Compile Include="frmSuaHanghoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHang.Designer.cs">
-      <DependentUpon>frmHang.cs</DependentUpon>
+    <Compile Include="frmSuaHanghoa.Designer.cs">
+      <DependentUpon>frmSuaHanghoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoaDon.cs">
+    <Compile Include="frmSuahoadon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHoaDon.Designer.cs">
-      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    <Compile Include="frmSuahoadon.Designer.cs">
+      <DependentUpon>frmSuahoadon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemhanghoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemhanghoa.Designer.cs">
+      <DependentUpon>frmThemhanghoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemhoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemhoadon.Designer.cs">
+      <DependentUpon>frmThemhoadon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTimkiemHH.cs">
       <SubType>Form</SubType>
@@ -68,19 +80,43 @@
     <Compile Include="frmTimkiemHH.Designer.cs">
       <DependentUpon>frmTimkiemHH.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXoahanghoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXoahanghoa.Designer.cs">
+      <DependentUpon>frmXoahanghoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmXoahoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXoahoadon.Designer.cs">
+      <DependentUpon>frmXoahoadon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHang.resx">
-      <DependentUpon>frmHang.cs</DependentUpon>
+    <EmbeddedResource Include="frmSuaHanghoa.resx">
+      <DependentUpon>frmSuaHanghoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHoaDon.resx">
-      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="frmSuahoadon.resx">
+      <DependentUpon>frmSuahoadon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemhanghoa.resx">
+      <DependentUpon>frmThemhanghoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemhoadon.resx">
+      <DependentUpon>frmThemhoadon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimkiemHH.resx">
       <DependentUpon>frmTimkiemHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXoahanghoa.resx">
+      <DependentUpon>frmXoahanghoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXoahoadon.resx">
+      <DependentUpon>frmXoahoadon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
