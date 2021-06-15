@@ -1,1 +1,1 @@
-select * from HDBAN_CHI_TIET
+select * from Hoa_Don_Ban
