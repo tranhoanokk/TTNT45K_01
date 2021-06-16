@@ -36,11 +36,11 @@ namespace Quản_lí_bán_hàng
                 MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
             }
             string sQuery = "select * from hang";
-                SqlDataAdapter adapter= new SqlDataAdapter(sQuery,con);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds, "HangHoa");
-                dataGridView1.DataSource = ds.Tables["HangHoa"];
-                con.Close();
+            SqlDataAdapter adapter= new SqlDataAdapter(sQuery,con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "HangHoa");
+            dataGridView1.DataSource = ds.Tables["HangHoa"];
+            con.Close();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -195,24 +195,21 @@ namespace Quản_lí_bán_hàng
             {
                 MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
             }
-            string sMahang = txtMahang.Text;
             string sTenhang = txtTenhang.Text;
-            string sSLton = txtSLton.Text;
-            string sGianhap = txtGianhap.Text;
-            string sGiaBan = txtGiaban.Text;
-
-            string sQuery = "select * from dbo.Hang where MaH=@MaH";
-            SqlCommand cmd = new SqlCommand(sQuery, con);
-            cmd.Parameters.AddWithValue("@MaH", sMahang);
-            cmd.Parameters.AddWithValue("@TenH", sTenhang);
-            cmd.Parameters.AddWithValue("@Soluonglon", sSLton);
-            cmd.Parameters.AddWithValue("@Dongianhap", sGianhap);
-            cmd.Parameters.AddWithValue("@Dongiaban", sGiaBan);
+            string sQuery = "select * from dbo.Hang where UPPER(tenH) like  UPPER(N'%" + sTenhang + "%')";
             try
             {
-
-                cmd.ExecuteNonQuery();
-               
+                SqlDataAdapter adapter = new SqlDataAdapter(sQuery, con);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "HangHoaTimKiem");
+                if (ds.Tables["HangHoaTimKiem"].Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có kết quả tìm kiếm", "Thông báo");
+                }
+                else
+                {
+                    dataGridView1.DataSource = ds.Tables["HangHoaTimKiem"];
+                }
             }
             catch (Exception ex)
             {
