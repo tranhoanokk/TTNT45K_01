@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{492B6DB6-ED12-4C01-8827-28AF1FD3B215}</ProjectGuid>
+    <ProjectGuid>{E77BE445-5DE8-4EF6-A971-406936C3BCA3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Quản_lí_bán_hàng</RootNamespace>
@@ -44,79 +44,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDoanhthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoanhthu.Designer.cs">
+      <DependentUpon>frmDoanhthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHanghoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHanghoa.Designer.cs">
+      <DependentUpon>frmHanghoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHangtonkho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHangtonkho.Designer.cs">
+      <DependentUpon>frmHangtonkho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoadon.Designer.cs">
+      <DependentUpon>frmHoadon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSuaHanghoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSuaHanghoa.Designer.cs">
-      <DependentUpon>frmSuaHanghoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSuahoadon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSuahoadon.Designer.cs">
-      <DependentUpon>frmSuahoadon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmThemhanghoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThemhanghoa.Designer.cs">
-      <DependentUpon>frmThemhanghoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmThemhoadon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThemhoadon.Designer.cs">
-      <DependentUpon>frmThemhoadon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTimkiemHH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTimkiemHH.Designer.cs">
-      <DependentUpon>frmTimkiemHH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmXoahanghoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmXoahanghoa.Designer.cs">
-      <DependentUpon>frmXoahanghoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmXoahoadon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmXoahoadon.Designer.cs">
-      <DependentUpon>frmXoahoadon.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDoanhthu.resx">
+      <DependentUpon>frmDoanhthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHanghoa.resx">
+      <DependentUpon>frmHanghoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHangtonkho.resx">
+      <DependentUpon>frmHangtonkho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHoadon.resx">
+      <DependentUpon>frmHoadon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSuaHanghoa.resx">
-      <DependentUpon>frmSuaHanghoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSuahoadon.resx">
-      <DependentUpon>frmSuahoadon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThemhanghoa.resx">
-      <DependentUpon>frmThemhanghoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThemhoadon.resx">
-      <DependentUpon>frmThemhoadon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTimkiemHH.resx">
-      <DependentUpon>frmTimkiemHH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmXoahanghoa.resx">
-      <DependentUpon>frmXoahanghoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmXoahoadon.resx">
-      <DependentUpon>frmXoahoadon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,7 +99,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -140,9 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tải xuống.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
