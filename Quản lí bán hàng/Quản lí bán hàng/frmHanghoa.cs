@@ -195,7 +195,7 @@ namespace Quản_lí_bán_hàng
             {
                 MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
             }
-            string sTenhang = txtTenhang.Text;
+            string sTenhang = txtTimkiem.Text;
             string sQuery = "select * from dbo.Hang where UPPER(tenH) like  UPPER(N'%" + sTenhang + "%')";
             try
             {
@@ -216,6 +216,26 @@ namespace Quản_lí_bán_hàng
                 MessageBox.Show("Xảy ra lỗi trong quá trình tìm kiếm!", "Thông báo");
                
             }
+            con.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(sCon);
+            try
+            {
+                con.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
+            }
+            txtTimkiem.Text = "";
+            string sQuery = "select * from hang";
+            SqlDataAdapter adapter = new SqlDataAdapter(sQuery, con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "HangHoa");
+            dataGridView1.DataSource = ds.Tables["HangHoa"];
             con.Close();
         }
     }
