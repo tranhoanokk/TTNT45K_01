@@ -1,0 +1,14 @@
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\bin\Debug\Quản lí bán hàng.exe.config
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\bin\Debug\Quản lí bán hàng.exe
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\bin\Debug\Quản lí bán hàng.pdb
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản lí bán hàng.csprojResolveAssemblyReference.cache
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản_lí_bán_hàng.frmMain.resources
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản_lí_bán_hàng.Properties.Resources.resources
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản lí bán hàng.csproj.GenerateResource.Cache
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản lí bán hàng.exe
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản lí bán hàng.pdb
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản_lí_bán_hàng.frmDoanhthu.resources
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản_lí_bán_hàng.frmHanghoa.resources
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản_lí_bán_hàng.frmHangtonkho.resources
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản_lí_bán_hàng.frmHoadon.resources
+E:\TTNT\TTNT45K_01\Quản lí bán hàng\Quản lí bán hàng\obj\Debug\Quản_lí_bán_hàng.FrmHDChiTiet.resources
