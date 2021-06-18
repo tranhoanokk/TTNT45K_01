@@ -176,11 +176,27 @@ namespace Quản_lí_bán_hàng
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(sCon);
+            try
+            {
+                con.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
+            }
             txtGiaban.Text = "";
             txtGianhap.Text = "";
             txtMahang.Text = "";
             txtSLton.Text = "";
             txtTenhang.Text = "";
+            txtTimkiem.Text = "";
+            string sQuery = "select * from hang";
+            SqlDataAdapter adapter = new SqlDataAdapter(sQuery, con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "HangHoa");
+            dataGridView1.DataSource = ds.Tables["HangHoa"];
+            con.Close();
         }
 
         private void btnTimkiem_Click(object sender, EventArgs e)

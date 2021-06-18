@@ -64,3 +64,11 @@ Values	('1', '1' , '2', '0'), ('1', '2', '1','0'), ('1','4','2','0'),
 
 update dbo.HD_Ban_Chitiet set Thanhtien = DonGiaBan * Soluongban 
 from dbo.Hang, dbo.HD_Ban_Chitiet
+update HoaDonBan 
+set HoaDonBan.TongTien = thongke.valsum
+from HoaDonBan
+inner join(
+select MaHDB, sum(ThanhTien) valsum
+from HD_Ban_Chitiet
+group by MaHDB
+) thongke on HoaDonBan.MaHD = thongke.MaHDB
