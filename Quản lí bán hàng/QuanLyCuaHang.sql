@@ -72,3 +72,6 @@ select MaHDB, sum(ThanhTien) valsum
 from HD_Ban_Chitiet
 group by MaHDB
 ) thongke on HoaDonBan.MaHD = thongke.MaHDB
+update dbo.HD_Ban_Chitiet set Thanhtien =  Soluongban * (select Dongiaban from Hang where MaH = HD_Ban_Chitiet.MaH)
+update HoaDonBan set TongTien = (Select Sum(Thanhtien) from HD_Ban_Chitiet where MaHDB = HoaDonBan.MaHD)
+select * from HoaDonBan

@@ -76,7 +76,7 @@ namespace Quản_lí_bán_hàng
                 con.Open();
                 string vaoNgay = dateTimePicker1.Value.ToString("yyyy-MM-dd");
                 var sMahang = comboBox1.Text;
-                string sQuery = "select Hang.MaH, Hang.TenH, Hang.SoLuongLon as SoLuongBanDau,HangDaBan.TongSoLuongBan, SoLuongLon - TongSoLuongBan as HangTon from Hang inner join  (select MaH, sum(SoLuongBan) as TongSoLuongBan from HD_Ban_Chitiet full outer join HoaDonBan on HoaDonBan.MaHD = HD_Ban_Chitiet.MaHDB  where NgayBan <'" + vaoNgay + "'and MaH=" + sMahang + "group by MaH) HangDaBan on HangDaBan.MaH = Hang.MaH";
+                string sQuery = "select Hang.MaH, Hang.TenH, SoLuongLon - TongSoLuongBan as HangTon from Hang inner join  (select MaH, sum(SoLuongBan) as TongSoLuongBan from HD_Ban_Chitiet full outer join HoaDonBan on HoaDonBan.MaHD = HD_Ban_Chitiet.MaHDB  where NgayBan <'" + vaoNgay + "'and MaH=" + sMahang + "group by MaH) HangDaBan on HangDaBan.MaH = Hang.MaH";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sQuery, con);
                 DataSet ds = new DataSet();

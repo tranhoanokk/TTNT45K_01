@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hoadonbanchitiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hoadonbanchitiet.Designer.cs">
+      <DependentUpon>Hoadonbanchitiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDoanhthu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Hoadonbanchitiet.resx">
+      <DependentUpon>Hoadonbanchitiet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDoanhthu.resx">
       <DependentUpon>frmDoanhthu.cs</DependentUpon>
     </EmbeddedResource>
