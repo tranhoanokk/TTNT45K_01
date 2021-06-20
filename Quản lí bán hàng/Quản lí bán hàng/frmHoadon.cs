@@ -20,7 +20,7 @@ namespace Quản_lí_bán_hàng
         {
             InitializeComponent();
         }
-
+        ////Hiển thị bảng Hóa đơn từ sql ra datagidview khi load form
         public void ShowHD()
         {
             SqlConnection con = new SqlConnection(scon);
@@ -43,7 +43,7 @@ namespace Quản_lí_bán_hàng
         {
             ShowHD();
         }
-
+        //Thêm Hóa đơn mới bằng cách thêm dữ liệu vào và bấm nút thêm. Khi đó dữ liệu sẽ được thêm vào bảng theo câu truy vấn INSERT 
         private void btthem(object sender, EventArgs e)
         {
 
@@ -86,7 +86,7 @@ namespace Quản_lí_bán_hàng
                 MessageBox.Show("Vui lòng nhập mã hóa đơn!", "Thông báo");
             }
         }
-
+        //Xóa dữ liệu và thông tin Hóa đơn theo câu truy vấn DELETE
         private void btxoa_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(scon);
@@ -114,7 +114,7 @@ namespace Quản_lí_bán_hàng
             ShowHD();
             con.Close();
         }
-
+        //Khi nhấp vào bất kì dòng nào trong datagridview thì thông tin sẽ hiện lên text box
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaHD.Text = dataGridView1.Rows[e.RowIndex].Cells["MaHD"].Value.ToString();
@@ -127,7 +127,7 @@ namespace Quản_lí_bán_hàng
         {
             this.Close();
         }
-
+        
         private void btsua_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)

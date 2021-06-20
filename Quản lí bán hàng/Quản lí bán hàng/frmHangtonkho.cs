@@ -47,12 +47,12 @@ namespace Quản_lí_bán_hàng
 
             }
         }
-
+        //liên kết giữa hai combobox 1 và 2. Khi chọn 1 giá trị ở combobox1 thì combobox2 tự hiển thị giá trị tương ứng 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox2.SelectedIndex = comboBox1.SelectedIndex;
         }
-
+        //liên kết giữa hai combobox 1 và 2. Khi chọn 1 giá trị ở combobox2 thì combobox1 tự hiển thị giá trị tương ứng 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = comboBox2.SelectedIndex;
@@ -62,7 +62,7 @@ namespace Quản_lí_bán_hàng
         {
 
         }
-
+        //Khi ta nhấn nút thống kê thì datagidview sẽ hiển thị số lượng tồn kho của hàng hóa mà chúng ta đã chọn theo ngày
         private void btnThongke_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)
@@ -89,7 +89,7 @@ namespace Quản_lí_bán_hàng
             }
             con.Close();
         }
-
+        //Trả các combobox và datagridview về lại ban đầu
         private void btnThulai_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;

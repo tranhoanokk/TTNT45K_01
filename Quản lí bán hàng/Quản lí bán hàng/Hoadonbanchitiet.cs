@@ -275,6 +275,11 @@ namespace Quản_lí_bán_hàng
         {
 
         }
+
+        private void Hoadonbanctiet_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

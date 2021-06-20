@@ -286,6 +286,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Hoadonbanctiet";
             this.Text = "Hóa đơn bán chi tiết";
+            this.Load += new System.EventHandler(this.Hoadonbanctiet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

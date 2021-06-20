@@ -23,7 +23,7 @@ namespace Quản_lí_bán_hàng
         {
          
         }
-
+        //Khi ta nhấn vào nút thống kê thì màn hình sẽ hiển thị doanh thu theo khoảng thời gian mà chúng ta đã chọn
         private void btnThongke_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(sCon);
@@ -50,7 +50,7 @@ namespace Quản_lí_bán_hàng
         {
             
         }
-
+        //Khi ta nhấn vào bất kì hóa đơn nào trong datagridview1 thì thông tin chi tiết về hóa đơn đó sẽ hiển thị ra datagridview2
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             SqlConnection con = new SqlConnection(sCon);
@@ -73,7 +73,7 @@ namespace Quản_lí_bán_hàng
             con.Close();
             
         }
-
+        // trả thông tin và thời gian về lại lúc ban đầu
         private void btnThulai_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;

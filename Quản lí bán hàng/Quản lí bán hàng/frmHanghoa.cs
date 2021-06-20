@@ -23,7 +23,7 @@ namespace Quản_lí_bán_hàng
         {
 
         }
-
+        //Hiển thị bảng hàng hóa từ sql ra datagidview khi load form
         private void frmHanghoa_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(sCon);
@@ -42,7 +42,7 @@ namespace Quản_lí_bán_hàng
             dataGridView1.DataSource = ds.Tables["HangHoa"];
             con.Close();
         }
-
+        // Thêm Hàng hóa mới bằng cách ghi dữ liệu vào text box và bấm nút lưu. Khi đó dữ liệu sẽ được thêm vào bảng theo câu truy vấn INSERT 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (checkInforIsEmpty(txtMahang.Text) || checkInforIsEmpty(txtTenhang.Text) || checkInforIsEmpty(txtSLton.Text) || checkInforIsEmpty(txtGianhap.Text) || checkInforIsEmpty(txtGiaban.Text))
@@ -92,7 +92,7 @@ namespace Quản_lí_bán_hàng
             }
             return false;
         }
-
+        //Khi nhấp vào bất kì dòng nào trong datagridview thì thông tin sẽ hiện lên text box
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMahang.Text = dataGridView1.Rows[e.RowIndex].Cells["MaH"].Value.ToString();
@@ -103,7 +103,7 @@ namespace Quản_lí_bán_hàng
 
             
         }
-
+        // Sửa thông tin và cập nhật vào sql bằng câu truy vấn UPDATE 
         private void btnSua_Click(object sender, EventArgs e)
         {
              SqlConnection con = new SqlConnection(sCon);
@@ -142,7 +142,7 @@ namespace Quản_lí_bán_hàng
             con.Close();
 
         }
-
+        //Xóa dữ liệu và thông tin hàng hóa theo câu truy vấn DELETE
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult ret = MessageBox.Show("Có chắc chắn xóa không?", "Thông báo", MessageBoxButtons.OKCancel);
@@ -173,7 +173,7 @@ namespace Quản_lí_bán_hàng
                 con.Close();
             }
         }
-
+        // trả các hộp nhập dữ liệu và datagidview về vị trí ban đầu 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(sCon);
@@ -198,7 +198,7 @@ namespace Quản_lí_bán_hàng
             dataGridView1.DataSource = ds.Tables["HangHoa"];
             con.Close();
         }
-
+        //Đây là chức năng tìm kiếm thông tin bằng cách nhập tên hàng hóa và truy vấn theo lệnh SELECT * from dbo.Hang where ...
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
            
@@ -237,22 +237,7 @@ namespace Quản_lí_bán_hàng
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(sCon);
-            try
-            {
-                con.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
-            }
-            txtTimkiem.Text = "";
-            string sQuery = "select * from hang";
-            SqlDataAdapter adapter = new SqlDataAdapter(sQuery, con);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "HangHoa");
-            dataGridView1.DataSource = ds.Tables["HangHoa"];
-            con.Close();
+            
         }
     }
 }
