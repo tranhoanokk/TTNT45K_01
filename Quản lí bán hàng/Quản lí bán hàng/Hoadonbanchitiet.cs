@@ -174,41 +174,41 @@ namespace Quản_lí_bán_hàng
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(sCon);
-            try
-            {
-                con.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
-            }
-            string sMaH = txtMaH.Text;
-            string sSlban = txtSlban.Text;
-            string sMaHD = txtMaHDB.Text;
-            string sDongia = txtDongiaban.Text;
-            string sThanhtien = txtThanhtien.Text;
-            int tien = Convert.ToInt32(sDongia) * Convert.ToInt32(sSlban);
+                SqlConnection con = new SqlConnection(sCon);
+                try
+                {
+                    con.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
+                }
+                string sMaH = txtMaH.Text;
+                string sSlban = txtSlban.Text;
+                string sMaHD = txtMaHDB.Text;
+                string sDongia = txtDongiaban.Text;
+                string sThanhtien = txtThanhtien.Text;
+                int tien = Convert.ToInt32(sDongia) * Convert.ToInt32(sSlban);
 
-            string squery = "insert dbo.HD_Ban_Chitiet values(@MaHD,@MaH,@Soluongban,@Thanhtien)";
-            SqlCommand cmd = new SqlCommand(squery, con);
-            cmd.Parameters.AddWithValue("@MaHD", sMaHD);
-            cmd.Parameters.AddWithValue("@MaH", sMaH);
-            cmd.Parameters.AddWithValue("@Soluongban",sSlban);
-            cmd.Parameters.AddWithValue("@Thanhtien", tien.ToString());
-            try
-            {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm mới thành công!", "Thông báo");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Xảy ra lỗi trong quá trình thêm mới!", "Thông báo");
-            }
-            // cap nhat lai thanh tien 
-            txtThanhtien.Text = (Convert.ToInt32(txtThanhtien.Text) + tien).ToString();
-            ShoWHDCT();
-            con.Close();
+                string squery = "insert dbo.HD_Ban_Chitiet values(@MaHD,@MaH,@Soluongban,@Thanhtien)";
+                SqlCommand cmd = new SqlCommand(squery, con);
+                cmd.Parameters.AddWithValue("@MaHD", sMaHD);
+                cmd.Parameters.AddWithValue("@MaH", sMaH);
+                cmd.Parameters.AddWithValue("@Soluongban",sSlban);
+                cmd.Parameters.AddWithValue("@Thanhtien", tien.ToString());
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Thêm mới thành công!", "Thông báo");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xảy ra lỗi trong quá trình thêm mới!", "Thông báo");
+                }
+                // cap nhat lai thanh tien 
+                txtThanhtien.Text = (Convert.ToInt32(txtThanhtien.Text) + tien).ToString();
+                ShoWHDCT();
+                con.Close();
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -266,7 +266,7 @@ namespace Quản_lí_bán_hàng
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        privFthate void label7_Click(object sender, EventArgs e)
         {
 
         }
