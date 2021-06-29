@@ -44,5 +44,10 @@ namespace Quản_lí_bán_hàng
             tkhangtk.MdiParent = this;
             tkhangtk.Show();
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
