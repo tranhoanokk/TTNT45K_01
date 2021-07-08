@@ -62,14 +62,16 @@ Values	('1', '1' , '2', '0'), ('1', '2', '1','0'), ('1','4','2','0'),
 		('8', '4', '10', '0') , ('8', '3', '5' ,'0') , ('8', '1', '2', '0') ,
 		('9', '6', '2', '0') , ('9', '5', '1','0') , ('9', '7', '2', '0') , ( '9', '8', '1', '0') , ('9', '9', '2' , '0') 
 
+update dbo.HD_Ban_Chitiet set Thanhtien = DonGiaBan * Soluongban 
+from dbo.Hang, dbo.HD_Ban_Chitiet
+update HoaDonBan 
+set HoaDonBan.TongTien = thongke.valsum
+from HoaDonBan
+inner join(
+select MaHDB, sum(ThanhTien) valsum
+from HD_Ban_Chitiet
+group by MaHDB
+) thongke on HoaDonBan.MaHD = thongke.MaHDB
 update dbo.HD_Ban_Chitiet set Thanhtien =  Soluongban * (select Dongiaban from Hang where MaH = HD_Ban_Chitiet.MaH)
 update HoaDonBan set TongTien = (Select Sum(Thanhtien) from HD_Ban_Chitiet where MaHDB = HoaDonBan.MaHD)
-select * from Hang
-Select * from HoaDonBan
-Select * from HD_Ban_Chitiet
-update dbo.HD_Ban_Chitiet set Thanhtien = (select Dongiaban from Hang where Dongiaban > 0 ) * Soluongban 
-where Soluongban > 0 
-
-update dbo.HoaDonBan set Tongtien = 50000  where MaHD = 9
-Insert dbo.HD_Ban_Chitiet (MaHDB, MaH, Soluongban, Thanhtien)
-Values('9', '6', '2', '0') , ('9', '5', '1','0') , ('9', '7', '2', '0') , ( '9', '8', '1', '0') , ('9', '9', '2' , '0')
+select * from HoaDonBan

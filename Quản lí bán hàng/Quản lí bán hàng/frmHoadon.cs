@@ -7,23 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; // khai bao thu vien 
+using System.Data.SqlClient;
 
 
 namespace Quản_lí_bán_hàng
 {
     public partial class frmHoadon : Form
     {
-        string scon = "Data Source=LAPTOP-SMKPHOFO;Initial Catalog=CuaHangTapHoa;Integrated Security=True";// xau ket noi 
-      
+        string scon = "Data Source=DESKTOP-BTBDGRO\\SQLEXPRESS;Initial Catalog=CuaHangTapHoa;Integrated Security=True";
+
         public frmHoadon()
         {
             InitializeComponent();
         }
-
-        public void ShowHD() // ham hien thi hoa don sau khi cap nhat 
+        ////Hiển thị bảng Hóa đơn từ sql ra datagidview khi load form
+        public void ShowHD()
         {
-            SqlConnection con = new SqlConnection(scon); // khoi tao ket noi 
+            SqlConnection con = new SqlConnection(scon);
             try
             {
                 con.Open();
@@ -32,22 +32,22 @@ namespace Quản_lí_bán_hàng
             {
                 MessageBox.Show("Xảy ra lỗi trong quá trình kết nối dữ liệu!", "Thông Báo");
             }
-            string sQuery = "select * from HoaDonBan"; // su dung cau lenh SQL 
-            SqlDataAdapter adapter = new SqlDataAdapter(sQuery, con); // lấy dữ liệu về 
-            DataSet ds = new DataSet();// khoi tao dataset , ds là bản sao của dữ liệu 
-            adapter.Fill(ds, "HoaDonBan");// đẩy dữ liệu vào dataset
-            dataGridView1.DataSource = ds.Tables["HoaDonBan"];// đổ dữ liệu vào datagridv
-            con.Close(); // đóng kết nối 
+            string sQuery = "select * from HoaDonBan";
+            SqlDataAdapter adapter = new SqlDataAdapter(sQuery, con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "HoaDonBan");
+            dataGridView1.DataSource = ds.Tables["HoaDonBan"];
+            con.Close();
         }
         private void frmHoadon_Load(object sender, EventArgs e)
         {
-            ShowHD(); // hien thi hoa don 
+            ShowHD();
         }
-
+        //Thêm Hóa đơn mới bằng cách thêm dữ liệu vào và bấm nút thêm. Khi đó dữ liệu sẽ được thêm vào bảng theo câu truy vấn INSERT 
         private void btthem(object sender, EventArgs e)
         {
-           
-            if (txtMaHD.Text != "" ) 
+
+            if (txtMaHD.Text != "")
             {
                 SqlConnection con = new SqlConnection(scon);
                 try
@@ -58,14 +58,13 @@ namespace Quản_lí_bán_hàng
                 {
                     MessageBox.Show("Xảy ra lỗi trong quá trình kết nối Database!", "Thông báo");
                 }
-                //lấy dữ liệu 
                 string sMaHD = txtMaHD.Text;
                 string sTongtien = txtTongtien.Text;
                 string sNgayban = dateTimePicker1.Value.ToString("yyyy-MM-dd");
                 string sGioban = dateTimePicker2.Value.ToString("hh:mm tt");
-                // sử dụng câu lệnh sql 
+
                 string squery = "insert dbo.HoaDonBan values(@MaHD,@NgayBan,@Gioban,@Tongtien)";
-                SqlCommand cmd = new SqlCommand(squery,con);
+                SqlCommand cmd = new SqlCommand(squery, con);
                 cmd.Parameters.AddWithValue("@MaHD", sMaHD);
                 cmd.Parameters.AddWithValue("@Tongtien", sTongtien);
                 cmd.Parameters.AddWithValue("@NgayBan", sNgayban);
@@ -82,12 +81,12 @@ namespace Quản_lí_bán_hàng
                 ShowHD();
                 con.Close();
             }
-            else 
+            else
             {
                 MessageBox.Show("Vui lòng nhập mã hóa đơn!", "Thông báo");
             }
         }
-
+        //Xóa dữ liệu và thông tin Hóa đơn theo câu truy vấn DELETE
         private void btxoa_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(scon);
@@ -109,16 +108,16 @@ namespace Quản_lí_bán_hàng
                 MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo");
             }
             catch (Exception ex)
-                {
-                    MessageBox.Show("Xảy ra lỗi trong quá trình kết nối dữ liệu!", "Thông báo");
-                }
+            {
+                MessageBox.Show("Xảy ra lỗi trong quá trình kết nối dữ liệu!", "Thông báo");
+            }
             ShowHD();
             con.Close();
         }
-
+        //Khi nhấp vào bất kì dòng nào trong datagridview thì thông tin sẽ hiện lên text box
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaHD.Text = dataGridView1.Rows[e.RowIndex].Cells["MaHD"].Value.ToString(); // vao dgv va chon hang e la chi so hang khi nguoi dung cua click, value la chuyen tu kieu text ve kieu chuoi 
+            txtMaHD.Text = dataGridView1.Rows[e.RowIndex].Cells["MaHD"].Value.ToString();
             txtTongtien.Text = dataGridView1.Rows[e.RowIndex].Cells["Tongtien"].Value.ToString();
             dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["NgayBan"].Value.ToString());
             dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["Gioban"].Value.ToString());
@@ -128,26 +127,25 @@ namespace Quản_lí_bán_hàng
         {
             this.Close();
         }
-
+        
         private void btsua_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1) // chọn 1 hàng từ dữ liệu để thực hiện để sử dụng 
+            if (dataGridView1.SelectedRows.Count == 1)
             {
-                int MaHD = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["MaHD"].Value.ToString()); //lấy dữ liệu mahd từ hàng được chọn 
-                Hoadonbanctiet f = new Hoadonbanctiet(MaHD); // chuyển qua form hóa đơn chi tites bvowis tham số là mhd cần cs 
-                f.ShowDialog(); // show form hdct 
-                ShowHD(); // cap nhat lai ds hd sau khi cs 
+                int MaHD = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["MaHD"].Value.ToString());
+                Hoadonbanctiet f = new Hoadonbanctiet(MaHD);
+                f.ShowDialog();
+                ShowHD();
             }
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        private void btHuy_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btTimkiem_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
